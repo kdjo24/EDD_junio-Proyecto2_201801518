@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+ 
+    <title>Proyecto Dos - 201801518</title>
+
+    
+    <!-- Custom styles for this template-->
+    <link href="miauUno.css" rel="stylesheet">
+    <link href="miaudos.css" rel="stylesheet">
+
+
+
+</head>
+
+<body style="background-image: url(https://fondosmil.com/fondo/22205.png)">
+    <div id="wrapper">
+
+       
+
+        <!--Login - pagina inicial-->
+        <div class="container" id = "login">
+            <hr><hr>
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <hr> <hr><hr><hr><div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Bienvenido a Movie Cast</h1></div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="userLogin" aria-describedby="emailHelp" placeholder="Usuario">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user" id="passwordLogin" placeholder="Contraseña">
+                                            </div>
+                                            <hr>
+                                            <input type="checkbox" id="checkadmin"> Administrador
+                                            <hr>
+                                            <button  class="btn btn-primary btn-user btn-block" onclick="verificarLogin()">Ingresar</button>
+                                            <hr> <hr> <hr><hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Login pagina inicia-->
+
+
+
+        <div class="row" id="peliculasUsuario"></div>
+
+
+
+         <!-- Barra vertical Administrador-->
+         <div id="barraUsuario">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <!-- Titulo barra vertical -->
+                <hr><hr>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" >Usuario</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtdpiusuario">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtnombreusuario">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtusuariousuario">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtcorreousuario">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtcontraseniausuario">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txttelefonousuario">Nombre del admin</div>
+                </a>
+                <div class="sidebar-card d-none d-lg-flex">
+                    <button class="btn btn-success btn-sm" onclick="finUsuario()">Logout</button>
+                </div>
+                <div class="sidebar-card d-none d-lg-flex">
+                    <button class="btn btn-success btn-sm" onclick="mostrarPeliculasAscendente()">Peliculas Ascendente</button>
+                </div>
+                <div class="sidebar-card d-none d-lg-flex">
+                    <button class="btn btn-success btn-sm" onclick="mostrarPeliculasDescendente()">Peliculas Descendente</button>
+                </div>
+                <div class="sidebar-card d-none d-lg-flex">
+                    <button class="btn btn-success btn-sm" onclick="actoresInorden()">Actores</button>
+                </div>
+                <div class="sidebar-card d-none d-lg-flex">
+                <button class="btn btn-success btn-sm" onclick="verCategorias()">Categorias</button>
+                </div> 
+                <!-- ----- ------------------------------- -->
+            </ul>
+            </div>
+            <!-- Fin barra vertical Administrador-->
+
+         <!-- Barra vertical Administrador-->
+         <div id="barraAdministrador">
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <!-- Titulo barra vertical -->
+                <hr><hr>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" >Administrador</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtdpiadmin">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtnombreadmin">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtusuarioadmin">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtcorreoadmin">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txtcontraseniaadmin">Nombre del admin</div>
+                </a>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div class="sidebar-brand-text mx-3" id="txttelefonoadmin">Nombre del admin</div>
+                </a>
+                <div class="sidebar-card d-none d-lg-flex">
+                    <button class="btn btn-success btn-sm" onclick="finAdmin()">Logout</button>
+                    </div>
+                    <div class="sidebar-card d-none d-lg-flex">
+                        <button class="btn btn-success btn-sm" onclick="descargarGrafo()">Descargar Grafo</button>
+                        </div>
+                 <!-- ----- ------------------------------- -->
+            </ul>
+            </div>
+            <!-- Fin barra vertical Administrador-->
+    
+            <!-- Pagina USUARIOS Administrador -->
+                <div class="container-fluid" id="principalAdmin">
+                    <hr>   
+                    <!-- Tarjeta uno -->
+                    <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Cargar Clientes</div>
+                                        <hr>   
+                                        <input type="file" id="fileClientes" class="btn btn-success btn-sm"></input>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Grafo Clientes</div>
+                                        <hr>
+                                        <button class="btn btn-success btn-sm" onclick="graficaClientes()">Mostrar</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Cargar Peliculas</div>
+                                        <hr>   
+                                        <input type="file" id="filePeliculas" class="btn btn-success btn-sm"></input>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Grafo Peliculas</div>
+                                        <hr>
+                                        <button class="btn btn-success btn-sm" onclick="graficaPeliculas()">Mostrar</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <!-- ------------------------------------------------------------------->
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Cargar Actores</div>
+                                        <hr>   
+                                        <input type="file" id="fileActores" class="btn btn-success btn-sm"></input>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Grafo Actores</div>
+                                        <hr>
+                                        <button class="btn btn-success btn-sm" onclick="graficaActores()">Mostrar</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Cargar Categorias</div>
+                                        <hr>   
+                                        <input type="file" id="fileCategorias" class="btn btn-success btn-sm"></input>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Grafo Categorias</div>
+                                        <hr>
+                                        <button class="btn btn-success btn-sm" onclick="graficaCategorias()">Mostrar</button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-xl-12 col-md-2 mb-3">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="miaucss" id="grafica"></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+               
+            <!-- FIN USUARIOS Administrador -->
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+     <!-- ----  -  --  --    SCRIPTS- -- -- -- - - - - -- - - -  -- - -- - -- - -- - - - - - -- - - -->
+     <script src="https://d3js.org/d3.v5.min.js"></script>
+     <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
+     <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+     <script type="text/javascript" src="./index.js"> </script>
+     <script src="https://superal.github.io/canvas2image/canvas2image.js "></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
